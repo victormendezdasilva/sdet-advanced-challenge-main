@@ -18,7 +18,7 @@ export const SearchSection = () => {
   };
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-[url('https://res.cloudinary.com/infovalue/image/upload/q_auto,w_800,h_600,c_limit/v1724389977/sdet/hawaii-beach-landscape-with-nature-coastline.jpg')] bg-cover bg-center">
+    <section id="searcher-section" className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-[url('https://res.cloudinary.com/infovalue/image/upload/q_auto,w_800,h_600,c_limit/v1724389977/sdet/hawaii-beach-landscape-with-nature-coastline.jpg')] bg-cover bg-center">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center space-y-4 text-center">
           <div className="space-y-2">

@@ -142,7 +142,7 @@ export default function SearchResultsPage() {
                       Location
                     </Label>
                     <Input
-                      id="location"
+                      id="location-input"
                       value={searchParams.location}
                       onChange={(e) =>
                         handleSearchParamChange("location", e.target.value)
@@ -236,7 +236,11 @@ export default function SearchResultsPage() {
                   </div>
                 </div>
                 <DialogFooter>
-                  <Button variant="outline" onClick={handleClearSearch}>
+                  <Button
+                    id="clear"
+                    variant="outline"
+                    onClick={handleClearSearch}
+                  >
                     Clear
                   </Button>
                   <Button

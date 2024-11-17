@@ -1,18 +1,34 @@
 import { Page } from "@playwright/test";
 
 export class SearchModal {
-  private page: Page;
-
-  constructor(page: Page) {
-    this.page = page;
-  }
+  constructor(private page: Page) {}
 
   get locationInput() {
-    return this.page.locator("#location");
+    return this.page.locator("#location-input");
   }
 
   get saveChangesButton() {
     return this.page.locator("#save-changes-button");
+  }
+
+  get checkInButton() {
+    return this.page.locator("#check-in");
+  }
+
+  get checkOutButton() {
+    return this.page.locator("#check-out");
+  }
+
+  get guestsButton() {
+    return this.page.locator("#guests");
+  }
+
+  get clearButton() {
+    return this.page.locator("#clear");
+  }
+
+  async saveChanges() {
+    await this.saveChangesButton.click();
   }
 
   async modifyLocation(location: string) {

@@ -1,10 +1,22 @@
-import { expect, Page } from "@playwright/test";
+import { Page } from "@playwright/test";
 
 export class HomePage {
-  private page: Page;
+  header: Header;
 
-  constructor(page: Page) {
-    this.page = page;
+  constructor(private page: Page) {
+    this.header = new Header(page);
+  }
+
+  get searcherSection() {
+    return this.page.locator("#search-button");
+  }
+
+  get featuredPropertiesSection() {
+    return this.page.locator("#featured-properties-section");
+  }
+
+  get whyChooseUsSection() {
+    return this.page.locator("#why-choose-us-section");
   }
 
   get searchInput() {
@@ -12,7 +24,7 @@ export class HomePage {
   }
 
   get searchButton() {
-    return this.page.locator("#search-button > svg");
+    return this.page.locator("#search-button");
   }
 
   async navigate() {
@@ -24,9 +36,24 @@ export class HomePage {
     await this.searchInput.click();
     await this.searchButton.click();
   }
+}
 
-  async verifyPageIsLoadCorrectly() {
-    await expect(this.searchInput).toBeVisible();
-    await expect(this.searchButton).toBeVisible();
+class Header {
+  constructor(private page: Page) {}
+
+  get homeIcon() {
+    return this.page.locator("#home-icon");
+  }
+
+  get rentals() {
+    return this.page.locator("#rentals-header");
+  }
+
+  get about() {
+    return this.page.locator("#about-header");
+  }
+
+  get contact() {
+    return this.page.locator("#contact-header");
   }
 }

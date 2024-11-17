@@ -11,22 +11,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
       - name: Install dependencies
         run: npm install
 
+      - name: Install Playwright Browsers Dependencies
+        run: npx playwright install-deps
+
+      - name: Install Playwright
+        run: npx playwright install
+
+      - name: Start App in Background
+        run: |
+          nohup npm run dev & echo $! > server.pid
+
+      - name: Wait for App to be Ready
+        run: npx wait-on http://localhost:3000
+
       - name: Run Playwright Tests
         run: npm test
 
       - name: Upload Test Artifacts
-        if: failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: playwright-results
-          path: playwright-report
+          path: test-results

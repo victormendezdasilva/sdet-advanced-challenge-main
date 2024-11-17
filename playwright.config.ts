@@ -8,7 +8,7 @@ export default defineConfig({
   use: {
     baseURL: "http://localhost:3000",
     headless: true,
-    screenshot: "only-on-failure",
+    screenshot: "on",
     video: "retain-on-failure",
   },
   expect: { timeout: 10000 },

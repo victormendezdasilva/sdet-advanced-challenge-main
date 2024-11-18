@@ -5,6 +5,11 @@ const outputFolder =
     ? "playwright-report-mobile"
     : "playwright-report-desktop";
 
+const outputDir =
+  process.env.PROJECT_MODE == "mobile"
+    ? "test-artifacts-mobile"
+    : "test-artifacts-desktop";
+
 export default defineConfig({
   testDir: "./e2e-tests/tests",
   timeout: 30000,
@@ -16,6 +21,7 @@ export default defineConfig({
     screenshot: "only-on-failure",
     video: "retain-on-failure",
   },
+  outputDir: outputDir,
   expect: { timeout: 10000 },
   reporter: [["list"], ["html", { outputFolder: outputFolder }]],
   projects: [

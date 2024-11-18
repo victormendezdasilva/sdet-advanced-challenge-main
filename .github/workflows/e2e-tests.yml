@@ -47,4 +47,5 @@ jobs:
           path: |
             playwright-report-desktop
             playwright-report-mobile
-            test-results
+            test-artifacts-mobile
+            test-artifacts-desktop

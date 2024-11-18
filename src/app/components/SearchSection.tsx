@@ -18,7 +18,7 @@ export const SearchSection = () => {
       };
     
     return (
-    <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-[url('https://res.cloudinary.com/infovalue/image/upload/q_auto,w_800,h_600,c_limit/v1724389977/sdet/hawaii-beach-landscape-with-nature-coastline.jpg')] bg-cover bg-center">
+    <section id="searcher-section" className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-[url('https://res.cloudinary.com/infovalue/image/upload/q_auto,w_800,h_600,c_limit/v1724389977/sdet/hawaii-beach-landscape-with-nature-coastline.jpg')] bg-cover bg-center">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
@@ -31,10 +31,10 @@ export const SearchSection = () => {
               </div>
               <div className="w-full max-w-sm space-y-2">
                 <form className="flex space-x-2">
-                  <Input className="flex-1 bg-slate-100" placeholder="Where are you going?" type="text" 
+                  <Input id="search-input" className="flex-1 bg-slate-100" placeholder="Where are you going?" type="text" 
                     value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
                   />
-                  <Button type="submit" variant={"default"} onClick={handleSearch}>
+                  <Button type="submit" id="search-button" variant={"default"} onClick={handleSearch}>
                     <SearchIcon className="h-4 w-4" />
                     <span className="sr-only">Search</span>
                   </Button>

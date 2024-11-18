@@ -6,7 +6,7 @@ This project is a take-home technical challenge for an advanced SDET (Software D
 
 ## Important Information
 
-- This is a fake project with mock data, where very limited functionality is actually implemented. 
+- This is a fake project with mock data, where very limited functionality is actually implemented.
 - The primary goal of this challenge is to demonstrate your testing skills, not to fix issues in the application.
 - You should only address issues that directly prevent your tests from passing.
 - You are allowed and encouraged to add properties to help with selecting elements, such as ids, data-testid attributes, or any other technique you choose, as long as it doesn't break the UI or alter the user experience.
@@ -25,10 +25,12 @@ This is a Next.js 14 application with TypeScript. Familiarize yourself with the 
 5. Implement e2e tests covering the following scenarios:
 
 ### Scenario 1: Landing Page Load
+
 - Open the landing page
 - Verify that it loads correctly
 
 ### Scenario 2: Search Functionality
+
 - Open the landing page
 - Enter 'aspen' in the search input
 - Press the search button
@@ -38,6 +40,7 @@ This is a Next.js 14 application with TypeScript. Familiarize yourself with the 
   - The page displays 1 result for an Aspen property
 
 ### Scenario 3: Modify Search
+
 - Open the landing page
 - Enter 'aspen' in the search input
 - Press the search button
@@ -45,11 +48,12 @@ This is a Next.js 14 application with TypeScript. Familiarize yourself with the 
 - Click on 'Modify Search'
 - Verify that 'Aspen' is set as the location
 
-4. Ensure all tests run on both desktop and mobile viewports:
+6. Ensure all tests run on both desktop and mobile viewports:
+
    - Desktop: Use a standard desktop resolution (e.g., 1920x1080)
    - Mobile: Use a common mobile resolution (e.g., 375x667 for iPhone 8)
 
-5. Set up a GitHub Action that:
+7. Set up a GitHub Action that:
    - Triggers on every Pull Request to the main branch
    - Triggers on every push to the main branch
    - Runs the e2e tests in the GitHub Actions runner for both desktop and mobile viewports
@@ -79,13 +83,15 @@ Your submission will be evaluated based on:
 6. If you've added any properties to aid in testing (e.g., data-testid attributes), document these changes
 7. Submit a pull request to the original repository with your implementation
 
-## Running the Application
-
-(Include instructions here on how to set up and run the Next.js application locally)
-
 ## Running the Tests Locally
 
-(Include instructions here on how to run your implemented e2e tests locally, including how to switch between desktop and mobile viewports)
+To run the test locally use any of the following commands:
+
+- Running tests for both views: `npm test`
+- Running tests with the UI Runner: `npm run ui-test`
+- Running tests for Desktop: `npm run test-desktop`
+- Running tests for Mobile: `npm run test-mobile`
+- Open the HTML report for the previous run: `npm run show-report`
 
 ## GitHub Actions Configuration
 
@@ -116,22 +122,22 @@ jobs:
       matrix:
         viewport: [desktop, mobile]
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-    - run: npm ci
-    - run: npm run build
-    - run: npm start & npx wait-on http://localhost:3000
-    - name: Run e2e tests
-      run: npm run test:e2e:${{ matrix.viewport }}
-    - name: Upload test results
-      uses: actions/upload-artifact@v2
-      if: failure()
-      with:
-        name: e2e-test-results-${{ matrix.viewport }}
-        path: e2e-results/
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      - run: npm ci
+      - run: npm run build
+      - run: npm start & npx wait-on http://localhost:3000
+      - name: Run e2e tests
+        run: npm run test:e2e:${{ matrix.viewport }}
+      - name: Upload test results
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: e2e-test-results-${{ matrix.viewport }}
+          path: e2e-results/
 ```
 
 # Instructions on how to run the Next.js app's dev server locally:
@@ -151,5 +157,6 @@ bun dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 # Final notes:
+
 The job position we are looking for is an advanced SDET that would help defining, creating and maintaining the E2E testing strategy for our applications.
 Good luck!! 🍀

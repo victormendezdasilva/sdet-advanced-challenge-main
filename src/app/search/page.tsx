@@ -68,14 +68,14 @@ export default function SearchResultsPage() {
       {isLoading && (
         <div className="absolute inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center">
           <div className="text-center">
-            <Loader2 className="h-8 w-8 animate-spin mx-auto" />
+            <Loader2 id="searching-icon" className="h-8 w-8 animate-spin mx-auto" />
             <p className="mt-2 text-sm text-muted-foreground">Searching...</p>
           </div>
         </div>
       )}
       <header className="border-b">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold">Search Results</h1>
+          <h1 id="search-title" className="text-2xl font-bold">Search Results</h1>
           <div className="flex items-center space-x-4">
             <Button variant="outline" onClick={() => setMapView(!mapView)}>
               <MapIcon className="mr-2 h-4 w-4" />
@@ -83,7 +83,7 @@ export default function SearchResultsPage() {
             </Button>
             <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
               <DialogTrigger asChild>
-                <Button>
+                <Button id="modify-search-button" >
                   <SearchIcon className="mr-2 h-4 w-4" />
                   Modify Search
                 </Button>
@@ -181,8 +181,8 @@ export default function SearchResultsPage() {
                   </div>
                 </div>
                 <DialogFooter>
-                  <Button variant="outline" onClick={handleClearSearch}>Clear</Button>
-                  <Button type="submit" onClick={handleSubmitSearch}>Save changes</Button>
+                  <Button variant="outline" id="clear" onClick={handleClearSearch}>Clear</Button>
+                  <Button type="submit" id="save-changes-button" onClick={handleSubmitSearch}>Save changes</Button>
                 </DialogFooter>
               </DialogContent>
             </Dialog>

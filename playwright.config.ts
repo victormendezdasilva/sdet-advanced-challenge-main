@@ -12,6 +12,7 @@ export default defineConfig({
     video: "retain-on-failure",
   },
   expect: { timeout: 10000 },
+  reporter: [["html", { outputFolder: "playwright-report" }]],
   projects: [
     {
       name: "Desktop Chromium",

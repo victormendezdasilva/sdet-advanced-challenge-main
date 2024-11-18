@@ -48,12 +48,12 @@ This is a Next.js 14 application with TypeScript. Familiarize yourself with the 
 - Click on 'Modify Search'
 - Verify that 'Aspen' is set as the location
 
-4. Ensure all tests run on both desktop and mobile viewports:
+6. Ensure all tests run on both desktop and mobile viewports:
 
    - Desktop: Use a standard desktop resolution (e.g., 1920x1080)
    - Mobile: Use a common mobile resolution (e.g., 375x667 for iPhone 8)
 
-5. Set up a GitHub Action that:
+7. Set up a GitHub Action that:
    - Triggers on every Pull Request to the main branch
    - Triggers on every push to the main branch
    - Runs the e2e tests in the GitHub Actions runner for both desktop and mobile viewports
@@ -84,6 +84,14 @@ Your submission will be evaluated based on:
 7. Submit a pull request to the original repository with your implementation
 
 ## Running the Tests Locally
+
+To run the test locally use any of the following commands:
+
+- Running tests for both views: `npm test`
+- Running tests with the UI Runner: `npm run ui-test`
+- Running tests for Desktop: `npm run test-desktop`
+- Running tests for Mobile: `npm run test-mobile`
+- Open the HTML report for the previous run: `npm run show-report`
 
 ## GitHub Actions Configuration
 

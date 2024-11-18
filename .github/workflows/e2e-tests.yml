@@ -40,7 +40,7 @@ jobs:
       - name: Run Playwright Tests - Mobile
         run: PROJECT_MODE=mobile npm run test-mobile
 
-      - name: Upload Test Artifacts - Mobile
+      - name: Upload Test Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: playwright-results

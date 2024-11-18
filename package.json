@@ -9,8 +9,8 @@
     "lint": "next lint",
     "test": "npx playwright test --reporter=list",
     "ui-test": "npx playwright test --ui",
-    "test-desktop": "npx playwright test --project \"Desktop Chromium\" --reporter=list",
-    "test-mobile": "npx playwright test --project \"Mobile WebKit\" --reporter=list",
+    "test-desktop": "npx playwright test --project \"Desktop Chromium\" --reporter=list,html",
+    "test-mobile": "npx playwright test --project \"Mobile WebKit\" --reporter=list,html",
     "show-report": "npx playwright show-report"
   },
   "dependencies": {

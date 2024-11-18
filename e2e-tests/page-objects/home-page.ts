@@ -33,7 +33,6 @@ export class HomePage {
 
   async searchLocation(location: string) {
     await this.searchInput.fill(location);
-    await this.searchInput.click();
     await this.searchButton.click();
   }
 }

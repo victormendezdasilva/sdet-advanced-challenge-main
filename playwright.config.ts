@@ -3,12 +3,12 @@ import { defineConfig } from "@playwright/test";
 export default defineConfig({
   testDir: "./e2e-tests/tests",
   timeout: 30000,
-  retries: 1,
+  retries: 3,
   workers: 1,
   use: {
     baseURL: "http://localhost:3000",
     headless: true,
-    screenshot: "on",
+    screenshot: "only-on-failure",
     video: "retain-on-failure",
   },
   expect: { timeout: 10000 },

@@ -34,10 +34,21 @@ jobs:
       - name: Wait for App to be Ready
         run: npx wait-on http://localhost:3000
 
-      - name: Run Playwright Tests
-        run: npm test
+      - name: Run Playwright Tests - Desktop
+        run: npm run test-desktop
 
-      - name: Upload Test Artifacts
+      - name: Upload Test Artifacts - Desktop
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-results
+          path: |
+            playwright-report
+            test-results
+
+      - name: Run Playwright Tests - Mobile
+        run: npm run test-mobile
+
+      - name: Upload Test Artifacts - Mobile
         uses: actions/upload-artifact@v4
         with:
           name: playwright-results

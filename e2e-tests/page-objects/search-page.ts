@@ -32,7 +32,7 @@ export class SearchPage {
   }
 
   async verifyPageIsLoadCorrectly() {
-    await expect(this.title).toHaveCount(1);
+    await expect(this.title).toBeVisible();
     await expect(this.searchingIcon).toHaveCount(0);
     await expect(this.modifySearchButton).toBeVisible();
   }

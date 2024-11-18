@@ -41,6 +41,7 @@ jobs:
         run: PROJECT_MODE=mobile npm run test-mobile
 
       - name: Upload Test Artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: playwright-results

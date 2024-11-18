@@ -35,7 +35,9 @@ jobs:
         run: npx wait-on http://localhost:3000
 
       - name: Run Playwright Tests - Desktop
-        run: npm run test-desktop
+        run: |
+          npm run test-desktop
+          mv playwright-reports/index.html playwright-reports/desktop-report.html
 
       - name: Upload Test Artifacts - Desktop
         uses: actions/upload-artifact@v4
@@ -46,7 +48,9 @@ jobs:
             test-results
 
       - name: Run Playwright Tests - Mobile
-        run: npm run test-mobile
+        run: |
+          npm run test-mobile
+          mv playwright-reports/index.html playwright-reports/mobile-report.html
 
       - name: Upload Test Artifacts - Mobile
         uses: actions/upload-artifact@v4

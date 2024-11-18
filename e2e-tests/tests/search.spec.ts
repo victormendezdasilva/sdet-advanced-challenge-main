@@ -4,7 +4,7 @@ import { HomePage } from "../page-objects/home-page.ts";
 import { test, expect } from "@playwright/test";
 
 test.describe("Search Functionality", () => {
-  test("User can filter from Home Page and should be redirect to Search Page", async ({
+  test("User can filter from Home Page and should be redirected to Search Page", async ({
     page,
   }) => {
     const query = "aspen";

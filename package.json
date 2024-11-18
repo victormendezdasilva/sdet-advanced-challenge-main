@@ -7,10 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "npx playwright test --reporter=list",
+    "test": "npx playwright test --reporter=list,html",
     "ui-test": "npx playwright test --ui",
-    "test-desktop": "npx playwright test --project \"Desktop Chromium\" --reporter=list,html",
-    "test-mobile": "npx playwright test --project \"Mobile WebKit\" --reporter=list,html",
+    "test-desktop": "npx playwright test --project \"Desktop Chromium\"",
+    "test-mobile": "npx playwright test --project \"Mobile WebKit\"",
     "show-report": "npx playwright show-report"
   },
   "dependencies": {

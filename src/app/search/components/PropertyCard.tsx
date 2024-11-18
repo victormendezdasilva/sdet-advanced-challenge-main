@@ -11,7 +11,7 @@ function pluralize(word: string, value: number = 0) {
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({ id, title, description, image, maxGuests, bedrooms, beds, bathrooms, price, rating, reviews }) => (
-    <Card key={id} className="flex flex-col sm:flex-row">
+    <Card key={id} id={"card-" + id} className="flex flex-col sm:flex-row">
         <div className="w-full sm:w-1/3">
             <img
                 src={image}

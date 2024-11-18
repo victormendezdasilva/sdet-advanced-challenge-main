@@ -4,7 +4,7 @@ export class SearchModal {
   constructor(private page: Page) {}
 
   get locationInput() {
-    return this.page.locator("#location-input");
+    return this.page.locator("#location");
   }
 
   get saveChangesButton() {

@@ -1,5 +1,10 @@
 import { defineConfig } from "@playwright/test";
 
+const outputFolder =
+  process.env.PROJECT_MODE == "mobile"
+    ? "playwright-report-mobile"
+    : "playwright-report-desktop";
+
 export default defineConfig({
   testDir: "./e2e-tests/tests",
   timeout: 30000,
@@ -12,7 +17,7 @@ export default defineConfig({
     video: "retain-on-failure",
   },
   expect: { timeout: 10000 },
-  reporter: [["list"], ["html", { outputFolder: "playwright-report" }]],
+  reporter: [["list"], ["html", { outputFolder: outputFolder }]],
   projects: [
     {
       name: "Desktop Chromium",

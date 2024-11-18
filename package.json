@@ -10,7 +10,7 @@
     "test": "npx playwright test --reporter=list,html",
     "ui-test": "npx playwright test --ui",
     "test-desktop": "npx playwright test --project \"Desktop Chromium\"",
-    "test-mobile": "npx playwright test --project \"Mobile WebKit\"",
+    "test-mobile": "npx cross-env PROJECT_MODE=mobile npx playwright test --project \"Mobile WebKit\"",
     "show-report": "npx playwright show-report"
   },
   "dependencies": {
@@ -37,6 +37,7 @@
     "@types/node": "^20.17.6",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "cross-env": "^7.0.3",
     "eslint": "^8",
     "eslint-config-next": "14.2.6",
     "postcss": "^8",
